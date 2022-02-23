@@ -1,0 +1,15 @@
+version: "3"
+services:
+  stock-tracker-app:
+    stdin_open: true
+    tty: true
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./src:/app/src:ro"
+    env_file:
+      - ./.env
+# volumes: 
+#   stock-tracker-app:
+#     external: true
